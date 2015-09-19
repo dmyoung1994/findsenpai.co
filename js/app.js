@@ -1,5 +1,7 @@
+import $  from 'jquery'
 import React  from 'react'
 import { Game } from './components/Game'
+import { Reward } from './components/Reward'
 import { Scoreboard } from './components/Scoreboard'
 import { SenpaiPreview } from './components/SenpaiPreview'
 
@@ -37,6 +39,10 @@ let App = React.createClass({
     this.setState(state);
   },
   gameEnd(winner) {
+    $("#reward").slideToggle();
+    setTimeout(function(){
+      $("#reward").slideToggle();
+    }, 1500);
     let state = this.state;
     state.users.map(function(user, idx) {
       if (winner === user.name) {
@@ -67,6 +73,7 @@ let App = React.createClass({
         <div style={boardStyle}>
           <Scoreboard users={this.state.users} />
           <SenpaiPreview senpaiLoc={senpaiLocLarge}/>
+          <Reward />
         </div>
       </div>
     );

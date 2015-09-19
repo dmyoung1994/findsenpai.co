@@ -74,8 +74,11 @@ let Game = React.createClass({
   render() {
     let locs = this.props.locs;
     let senpaiLoc = this.props.senpaiLoc;
-    let player = this.props.player
-    let numNonSenpais = 100;
+    let player = this.props.player;
+    let characterSize = 50 * 25;
+    let numCharacters = (window.innerWidth * window.innerHeight) / (characterSize * 3)
+
+    let numNonSenpais = numCharacters;
     let nonSenpaiArray = [];
     for (var i = 0; i <= numNonSenpais; ++i) {
       nonSenpaiArray.push(i);
