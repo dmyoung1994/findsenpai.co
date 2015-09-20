@@ -45,6 +45,7 @@ let NonSenpai = React.createClass({
 
 let Senpai = React.createClass({
   foundSenpai() {
+    console.log(player);
     this.props.onFind(this.props.player);
   },
   render() {
