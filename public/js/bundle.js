@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a38701016fefe49f6f91"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a051a8642ef960310654"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -31165,7 +31165,6 @@
 
 	  render: function render() {
 	    var users = this.props.users;
-	    console.log(typeof users);
 	    if (users === 'undefined') {
 	      users = [{ name: "loading...", score: "..." }];
 	    }
