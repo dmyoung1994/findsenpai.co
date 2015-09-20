@@ -50,23 +50,21 @@ let App = React.createClass({
     }, 1500);
     let state = this.state;
     state.users.map(function(user, idx) {
-      if (winner === user.name) {
-        ++user.score;
-        let self = this;
-        if (user.id === 'udnefined') user.id = '';
-        let url = "/save?" + "name=" + user.name +
-          "&score=" + user.score +
-          "&id=" + user.id;
-          console.log(url);
-        $.ajax({
-          url: url,
-          dataType: "json",
-          type: "GET",
-          success: function(res) {
-            self.setState({users: res});
-          }
-        });
-      }
+      ++user.score;
+      let self = this;
+      if (user.id === 'udnefined') user.id = '';
+      let url = "/save?" + "name=" + user.name +
+        "&score=" + user.score +
+        "&id=" + user.id;
+        console.log(url);
+      $.ajax({
+        url: url,
+        dataType: "json",
+        type: "GET",
+        success: function(res) {
+          self.setState({users: res});
+        }
+      });
     });
   },
   render() {

@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4b1674f00fa1de8c52cd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f1b77404082bd44585cc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -740,25 +740,19 @@
 	    }, 1500);
 	    var state = this.state;
 	    state.users.map(function (user, idx) {
-	      var _this = this;
-
-	      if (winner === user.name) {
-	        (function () {
-	          ++user.score;
-	          var self = _this;
-	          if (user.id === 'udnefined') user.id = '';
-	          var url = "/save?" + "name=" + user.name + "&score=" + user.score + "&id=" + user.id;
-	          console.log(url);
-	          _jquery2['default'].ajax({
-	            url: url,
-	            dataType: "json",
-	            type: "GET",
-	            success: function success(res) {
-	              self.setState({ users: res });
-	            }
-	          });
-	        })();
-	      }
+	      ++user.score;
+	      var self = this;
+	      if (user.id === 'udnefined') user.id = '';
+	      var url = "/save?" + "name=" + user.name + "&score=" + user.score + "&id=" + user.id;
+	      console.log(url);
+	      _jquery2['default'].ajax({
+	        url: url,
+	        dataType: "json",
+	        type: "GET",
+	        success: function success(res) {
+	          self.setState({ users: res });
+	        }
+	      });
 	    });
 	  },
 	  render: function render() {
