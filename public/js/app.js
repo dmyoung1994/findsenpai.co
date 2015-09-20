@@ -39,7 +39,7 @@ let App = React.createClass({
           }
           res.push({"name": name, "score": 0});
         }
-        self.setState({users: res});
+        self.setState({users: res, name: self.state.name});
       }
     });
   },
@@ -53,7 +53,7 @@ let App = React.createClass({
       if (winner === user.name) {
         ++user.score;
         let self = this;
-        if (user.id === 'udnefined') user.id = '';
+        if (user.id === udnefined) user.id = '';
         let url = "/save?" + "name=" + user.name +
           "&score=" + user.score +
           "&id=" + user.id;

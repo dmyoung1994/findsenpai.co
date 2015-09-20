@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dfdbecba6cbc8d990289"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c91dfcfac53295d68a56"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -729,7 +729,7 @@
 	          }
 	          res.push({ "name": name, "score": 0 });
 	        }
-	        self.setState({ users: res });
+	        self.setState({ users: res, name: self.state.name });
 	      }
 	    });
 	  },
@@ -746,7 +746,7 @@
 	        (function () {
 	          ++user.score;
 	          var self = _this;
-	          if (user.id === 'udnefined') user.id = '';
+	          if (user.id === udnefined) user.id = '';
 	          var url = "/save?" + "name=" + user.name + "&score=" + user.score + "&id=" + user.id;
 	          console.log(url);
 	          _jquery2['default'].ajax({
