@@ -81,6 +81,7 @@ let App = React.createClass({
      let senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
      let senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
      let users = this.state.users;
+     console.log(this.state.name);
     return (
       <div>
         <div style={backgroundStyle}>
