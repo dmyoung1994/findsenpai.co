@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "417451360b08594addbd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5314beec4e421a3e500f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30868,6 +30868,7 @@
 	  render: function render() {
 	    characterCSS["backgroundPositionX"] = this.props.loc + "px";
 	    characterCSS["zIndex"] = 2;
+	    characterCSS["backgroundColor"] = "red";
 
 	    // calculate random position on the screen
 	    var width = 0.7 * window.innerWidth;

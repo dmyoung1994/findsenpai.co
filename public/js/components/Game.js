@@ -50,6 +50,7 @@ let Senpai = React.createClass({
   render() {
     characterCSS["backgroundPositionX"] = this.props.loc + "px";
     characterCSS["zIndex"] = 2;
+    characterCSS["backgroundColor"] = "red";
 
     // calculate random position on the screen
     let width = 0.7 * window.innerWidth;
