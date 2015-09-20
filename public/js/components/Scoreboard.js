@@ -19,7 +19,7 @@ let ScoreboardCell = React.createClass({
 let Scoreboard = React.createClass({
   render() {
     var users = this.props.users;
-    console.log(this.props.users);
+    console.log(typeof(users));
     if (users === 'undefined') {
       users = [{name: "loading...", score: "..."}];
     }

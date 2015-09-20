@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a4a1b943faf993273566"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a38701016fefe49f6f91"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -721,6 +721,7 @@
 	    _jquery2['default'].ajax({
 	      url: "/users",
 	      type: "GET",
+	      dataType: "json",
 	      success: function success(res) {
 	        self.setState({ users: res });
 	      }
@@ -748,7 +749,7 @@
 	          _jquery2['default'].ajax({
 	            url: "/save",
 	            data: user,
-	            dataType: "JSON",
+	            dataType: "json",
 	            type: "GET",
 	            success: function success(res) {
 	              self.setState({ users: res });
@@ -31164,7 +31165,7 @@
 
 	  render: function render() {
 	    var users = this.props.users;
-	    console.log(this.props.users);
+	    console.log(typeof users);
 	    if (users === 'undefined') {
 	      users = [{ name: "loading...", score: "..." }];
 	    }

@@ -31,6 +31,7 @@ let App = React.createClass({
     $.ajax({
       url: "/users",
       type: "GET",
+      dataType: "json",
       success: function(res) {
         self.setState({users: res});
       }
@@ -55,7 +56,7 @@ let App = React.createClass({
         $.ajax({
           url: "/save",
           data: user,
-          dataType: "JSON",
+          dataType: "json",
           type: "GET",
           success: function(res) {
             self.setState({users: res});
