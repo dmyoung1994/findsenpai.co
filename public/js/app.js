@@ -55,7 +55,7 @@ let App = React.createClass({
         ++user.score;
         let self = this;
         if (user.id === undefined) user.id = '';
-        let url = "/save?" + "name=" + user.name +
+        let url = "/save?" + "user=" + user.name +
           "&score=" + user.score +
           "&id=" + user.id;
           console.log(url)
