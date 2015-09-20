@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6aa6e9eefd5e898b88ca"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "dfdbecba6cbc8d990289"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30864,7 +30864,7 @@
 	  displayName: 'Senpai',
 
 	  foundSenpai: function foundSenpai() {
-	    console.log(player);
+	    console.log(this.props.player);
 	    this.props.onFind(this.props.player);
 	  },
 	  render: function render() {
