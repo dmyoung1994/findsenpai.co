@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8f06726369cf882c6712"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9b1bddb9972aa0c4fec6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -728,6 +728,7 @@
 	      url: "/users",
 	      type: "GET",
 	      success: function success(res) {
+	        console.log(res);
 	        self.setState({ users: res });
 	      }
 	    });
