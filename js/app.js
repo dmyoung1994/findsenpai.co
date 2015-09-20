@@ -36,7 +36,7 @@ let App = React.createClass({
     }
     let state = this.state;
     $.ajax({
-      url: url + "/get",
+      url: url + "/users",
       type: "GET",
       success: function(res) {
         this.setState({users: res});
