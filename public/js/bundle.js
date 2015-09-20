@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fce10391917397afe060"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "53b2ccafcf910e3f595b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -740,25 +740,21 @@
 	      (0, _jquery2['default'])("#reward").slideToggle();
 	    }, 1500);
 	    var state = this.state;
+	    var self = this;
 	    state.users.map(function (user, idx) {
-	      var _this = this;
-
 	      if (winner === user.name) {
-	        (function () {
-	          ++user.score;
-	          var self = _this;
-	          if (user.id === undefined) user.id = '';
-	          var url = "/save?" + "user=" + user.name + "&score=" + user.score + "&id=" + user.id;
-	          console.log(url);
-	          _jquery2['default'].ajax({
-	            url: url,
-	            dataType: "json",
-	            type: "GET",
-	            success: function success(res) {
-	              self.setState({ users: res });
-	            }
-	          });
-	        })();
+	        ++user.score;
+	        if (user.id === undefined) user.id = '';
+	        var url = "/save?" + "user=" + user.name + "&score=" + user.score + "&id=" + user.id;
+	        _jquery2['default'].ajax({
+	          url: url,
+	          dataType: "json",
+	          type: "GET",
+	          success: function success(res) {
+	            console.log(res);
+	            self.setState({ users: res });
+	          }
+	        });
 	      }
 	    });
 	  },

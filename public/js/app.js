@@ -50,20 +50,20 @@ let App = React.createClass({
       $("#reward").slideToggle();
     }, 1500);
     let state = this.state;
+    var self = this;
     state.users.map(function(user, idx) {
       if (winner === user.name) {
         ++user.score;
-        let self = this;
         if (user.id === undefined) user.id = '';
         let url = "/save?" + "user=" + user.name +
           "&score=" + user.score +
           "&id=" + user.id;
-          console.log(url)
         $.ajax({
           url: url,
           dataType: "json",
           type: "GET",
           success: function(res) {
+            console.log(res);
             self.setState({users: res});
           }
         });
