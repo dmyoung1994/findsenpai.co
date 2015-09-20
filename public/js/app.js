@@ -38,6 +38,7 @@ let App = React.createClass({
       url: "/users",
       type: "GET",
       success: function(res) {
+        console.log(res);
         self.setState({users: res});
       }
     });
