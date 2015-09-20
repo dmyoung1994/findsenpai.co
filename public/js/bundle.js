@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2c6250305bc59d76e400"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8f06726369cf882c6712"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -723,12 +723,12 @@
 	        name = "Loser";
 	      }
 	    }
-	    var state = this.state;
+	    var self = this;
 	    _jquery2['default'].ajax({
 	      url: "/users",
 	      type: "GET",
 	      success: function success(res) {
-	        this.setState({ users: res });
+	        self.setState({ users: res });
 	      }
 	    });
 	  },
@@ -739,17 +739,22 @@
 	    }, 1500);
 	    var state = this.state;
 	    state.users.map(function (user, idx) {
+	      var _this = this;
+
 	      if (winner === user.name) {
-	        ++user.score;
-	        _jquery2['default'].ajax({
-	          url: "/save",
-	          data: user,
-	          dataType: "JSON",
-	          type: "GET",
-	          success: function success(res) {
-	            this.setState({ users: res });
-	          }
-	        });
+	        (function () {
+	          ++user.score;
+	          var self = _this;
+	          _jquery2['default'].ajax({
+	            url: "/save",
+	            data: user,
+	            dataType: "JSON",
+	            type: "GET",
+	            success: function success(res) {
+	              self.setState({ users: res });
+	            }
+	          });
+	        })();
 	      }
 	    });
 	  },

@@ -33,12 +33,12 @@ let App = React.createClass({
         name = "Loser";
       }
     }
-    let state = this.state;
+    let self = this;
     $.ajax({
       url: "/users",
       type: "GET",
       success: function(res) {
-        this.setState({users: res});
+        self.setState({users: res});
       }
     });
   },
@@ -51,13 +51,14 @@ let App = React.createClass({
     state.users.map(function(user, idx) {
       if (winner === user.name) {
         ++user.score;
+        let self = this;
         $.ajax({
           url: "/save",
           data: user,
           dataType: "JSON",
           type: "GET",
           success: function(res) {
-            this.setState({users: res});
+            self.setState({users: res});
           }
         });
       }
