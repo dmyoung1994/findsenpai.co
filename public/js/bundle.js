@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9b1bddb9972aa0c4fec6"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a72f81e487d2a8f21492"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -710,9 +710,9 @@
 	  displayName: 'App',
 
 	  getInitialState: function getInitialState() {
-	    return { name: "" };
+	    return { name: "", users: [] };
 	  },
-	  componentWillMount: function componentWillMount() {
+	  componentDidMount: function componentDidMount() {
 	    this.getUsers();
 	  },
 	  getUsers: function getUsers() {
@@ -724,14 +724,15 @@
 	      }
 	    }
 	    var self = this;
-	    _jquery2['default'].ajax({
+	    _jquery2['default'].ajax(({
 	      url: "/users",
 	      type: "GET",
 	      success: function success(res) {
-	        console.log(res);
-	        self.setState({ users: res });
+	        if (this.isMounted()) {
+	          this.setState({ users: res });
+	        }
 	      }
-	    });
+	    }).bind(this));
 	  },
 	  gameEnd: function gameEnd(winner) {
 	    (0, _jquery2['default'])("#reward").slideToggle();
@@ -746,15 +747,17 @@
 	        (function () {
 	          ++user.score;
 	          var self = _this;
-	          _jquery2['default'].ajax({
+	          _jquery2['default'].ajax(({
 	            url: "/save",
 	            data: user,
 	            dataType: "JSON",
 	            type: "GET",
 	            success: function success(res) {
-	              self.setState({ users: res });
+	              if (this.isMounted()) {
+	                self.setState({ users: res });
+	              }
 	            }
-	          });
+	          }).bind(_this));
 	        })();
 	      }
 	    });

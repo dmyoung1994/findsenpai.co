@@ -20,9 +20,9 @@ let boardStyle = {
 
 let App = React.createClass({
   getInitialState() {
-    return {name: ""};
+    return {name: "", users: []};
   },
-  componentWillMount() {
+  componentDidMount() {
     this.getUsers();
   },
   getUsers() {
@@ -38,10 +38,11 @@ let App = React.createClass({
       url: "/users",
       type: "GET",
       success: function(res) {
-        console.log(res);
-        self.setState({users: res});
+        if (this.isMounted()) {
+          this.setState({users: res});
+        }
       }
-    });
+    }.bind(this));
   },
   gameEnd(winner) {
     $("#reward").slideToggle();
@@ -59,9 +60,11 @@ let App = React.createClass({
           dataType: "JSON",
           type: "GET",
           success: function(res) {
-            self.setState({users: res});
+            if (this.isMounted()) {
+              self.setState({users: res});
+            }
           }
-        });
+        }.bind(this));
       }
     });
   },
