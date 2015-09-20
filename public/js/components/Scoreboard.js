@@ -20,7 +20,7 @@ let Scoreboard = React.createClass({
   render() {
     var users = this.props.users;
     console.log(this.props.users);
-    if (users === undefined) {
+    if (users === 'undefined') {
       users = [{name: "loading...", score: "..."}];
     }
     return(

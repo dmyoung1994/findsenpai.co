@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b030f5af49d26ab3d522"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a4a1b943faf993273566"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -31133,14 +31133,14 @@
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(5), RootInstanceProvider = __webpack_require__(13), ReactMount = __webpack_require__(15), React = __webpack_require__(69); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-	"use strict";
+	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
 	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { "default": obj };
+	  return obj && obj.__esModule ? obj : { 'default': obj };
 	}
 
 	var _react = __webpack_require__(69);
@@ -31151,25 +31151,25 @@
 	  float: "right"
 	};
 
-	var ScoreboardCell = _react2["default"].createClass({
-	  displayName: "ScoreboardCell",
+	var ScoreboardCell = _react2['default'].createClass({
+	  displayName: 'ScoreboardCell',
 
 	  render: function render() {
-	    return _react2["default"].createElement("div", null, this.props.pos, ". ", this.props.name, _react2["default"].createElement("span", { style: cellStyle }, this.props.score));
+	    return _react2['default'].createElement('div', null, this.props.pos, '. ', this.props.name, _react2['default'].createElement('span', { style: cellStyle }, this.props.score));
 	  }
 	});
 
-	var Scoreboard = _react2["default"].createClass({
-	  displayName: "Scoreboard",
+	var Scoreboard = _react2['default'].createClass({
+	  displayName: 'Scoreboard',
 
 	  render: function render() {
 	    var users = this.props.users;
 	    console.log(this.props.users);
-	    if (users === undefined) {
+	    if (users === 'undefined') {
 	      users = [{ name: "loading...", score: "..." }];
 	    }
-	    return _react2["default"].createElement("div", null, users.map(function (user, idx) {
-	      return _react2["default"].createElement(ScoreboardCell, { pos: idx + 1,
+	    return _react2['default'].createElement('div', null, users.map(function (user, idx) {
+	      return _react2['default'].createElement(ScoreboardCell, { pos: idx + 1,
 	        name: user.name,
 	        score: user.score,
 	        key: idx });
