@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d9df871ff152b57586c4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b030f5af49d26ab3d522"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -765,8 +765,9 @@
 	    var senpaiPos = Math.floor(Math.random() * locsSmall.length);
 	    var senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
 	    var senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
+	    var users = this.state.users;
 	    return _react2['default'].createElement('div', null, _react2['default'].createElement('div', { style: backgroundStyle }, _react2['default'].createElement(_componentsGame.Game, { onClick: this.gameEnd, locs: locsSmall, senpaiLoc: senpaiLocSmall,
-	      player: this.state.name })), _react2['default'].createElement('div', { style: boardStyle }, _react2['default'].createElement(_componentsScoreboard.Scoreboard, { users: this.state.users }), _react2['default'].createElement(_componentsSenpaiPreview.SenpaiPreview, { senpaiLoc: senpaiLocLarge }), _react2['default'].createElement(_componentsReward.Reward, null)));
+	      player: this.state.name })), _react2['default'].createElement('div', { style: boardStyle }, _react2['default'].createElement(_componentsScoreboard.Scoreboard, { users: users }), _react2['default'].createElement(_componentsSenpaiPreview.SenpaiPreview, { senpaiLoc: senpaiLocLarge }), _react2['default'].createElement(_componentsReward.Reward, null)));
 	  }
 	});
 

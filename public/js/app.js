@@ -75,6 +75,7 @@ let App = React.createClass({
      let senpaiPos = Math.floor(Math.random() * locsSmall.length);
      let senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
      let senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
+     let users = this.state.users;
     return (
       <div>
         <div style={backgroundStyle}>
@@ -82,7 +83,7 @@ let App = React.createClass({
             player={this.state.name}/>
         </div>
         <div style={boardStyle}>
-          <Scoreboard users={this.state.users} />
+          <Scoreboard users={users} />
           <SenpaiPreview senpaiLoc={senpaiLocLarge}/>
           <Reward />
         </div>
