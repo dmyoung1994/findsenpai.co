@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5314beec4e421a3e500f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d15ddd976e3ca33982b6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -742,8 +742,8 @@
 	    var state = this.state;
 	    var self = this;
 	    state.users.map(function (user, idx) {
-	      console.log(user.name);
-	      console.log(winner);
+	      // console.log(user.name);
+	      // console.log(winner);
 	      if (winner === user.name) {
 	        ++user.score;
 	        if (user.id === undefined) user.id = '';
@@ -30868,7 +30868,7 @@
 	  render: function render() {
 	    characterCSS["backgroundPositionX"] = this.props.loc + "px";
 	    characterCSS["zIndex"] = 2;
-	    characterCSS["backgroundColor"] = "red";
+	    // characterCSS["backgroundColor"] = "red";
 
 	    // calculate random position on the screen
 	    var width = 0.7 * window.innerWidth;
