@@ -33,15 +33,16 @@ let App = React.createClass({
       type: "GET",
       dataType: "json",
       success: function(res) {
+        if (this.state.name === "") {
+          name = prompt("Enter a name:", "Kohai");
+          if (name === null) {
+            name = "Loser";
+          }
+          res.push({"name": name, "score": 0});
+        }
         self.setState({users: res});
       }
     });
-    if (this.state.name === "") {
-      name = prompt("Enter a name:", "Kohai");
-      if (name === null) {
-        name = "Loser";
-      }
-    }
   },
   gameEnd(winner) {
     $("#reward").slideToggle();

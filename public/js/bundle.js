@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d39d004777d294f40c2d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "67537034da7a9762a077"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -723,15 +723,16 @@
 	      type: "GET",
 	      dataType: "json",
 	      success: function success(res) {
+	        if (this.state.name === "") {
+	          name = prompt("Enter a name:", "Kohai");
+	          if (name === null) {
+	            name = "Loser";
+	          }
+	          res.push({ "name": name, "score": 0 });
+	        }
 	        self.setState({ users: res });
 	      }
 	    });
-	    if (this.state.name === "") {
-	      name = prompt("Enter a name:", "Kohai");
-	      if (name === null) {
-	        name = "Loser";
-	      }
-	    }
 	  },
 	  gameEnd: function gameEnd(winner) {
 	    (0, _jquery2['default'])("#reward").slideToggle();
