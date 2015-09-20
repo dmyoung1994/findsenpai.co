@@ -17,12 +17,13 @@ let boardStyle = {
   verticalAlign: "top"
 };
 
+let url = "http://104.154.86.245";
+
 let App = React.createClass({
   getInitialState() {
     return {name: ""};
   },
   componentWillMount() {
-
     this.getUsers();
   },
   getUsers() {
@@ -34,9 +35,13 @@ let App = React.createClass({
       }
     }
     let state = this.state;
-    state["users"] = [{"name": name, "score": 0}];
-    state["name"] = name;
-    this.setState(state);
+    $.ajax({
+      url: url + "/get",
+      type: "GET",
+      success: function(res) {
+        this.setState({users: res});
+      }
+    });
   },
   gameEnd(winner) {
     $("#reward").slideToggle();
@@ -47,10 +52,17 @@ let App = React.createClass({
     state.users.map(function(user, idx) {
       if (winner === user.name) {
         ++user.score;
+        $.ajax({
+          url: url + "/save",
+          data: user,
+          dataType: "JSON",
+          type: "GET",
+          success: function(res) {
+            this.setState({users: res});
+          }
+        });
       }
     });
-    ++state.round;
-    this.setState(state);
   },
   render() {
     let locsSmall = [0, -32, -65, -97, -129, -161, -193, -225,
