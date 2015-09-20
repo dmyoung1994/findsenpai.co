@@ -26,7 +26,7 @@ let NonSenpai = React.createClass({
     let locs = this.props.locs;
     let randomCharacter = Math.floor(Math.random() * locs.length);
     characterCSS["backgroundPositionX"] = locs[randomCharacter] + "px";
-    characterCSS["backgroundColor"] = "none";
+    // characterCSS["backgroundColor"] = "none";
 
     // calculate random position on the screen
     let width = 0.7 * window.innerWidth;

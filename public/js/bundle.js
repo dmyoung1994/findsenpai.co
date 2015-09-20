@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d15ddd976e3ca33982b6"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "55f463cb0b83666f2336"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30844,7 +30844,7 @@
 	    var locs = this.props.locs;
 	    var randomCharacter = Math.floor(Math.random() * locs.length);
 	    characterCSS["backgroundPositionX"] = locs[randomCharacter] + "px";
-	    characterCSS["backgroundColor"] = "none";
+	    // characterCSS["backgroundColor"] = "none";
 
 	    // calculate random position on the screen
 	    var width = 0.7 * window.innerWidth;
