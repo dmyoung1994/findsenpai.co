@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dbd18b27535e081a5aa1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2c6250305bc59d76e400"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -706,8 +706,6 @@
 	  verticalAlign: "top"
 	};
 
-	var url = "http://findsenpai.co";
-
 	var App = _react2['default'].createClass({
 	  displayName: 'App',
 
@@ -727,7 +725,7 @@
 	    }
 	    var state = this.state;
 	    _jquery2['default'].ajax({
-	      url: url + "/users",
+	      url: "/users",
 	      type: "GET",
 	      success: function success(res) {
 	        this.setState({ users: res });
@@ -744,7 +742,7 @@
 	      if (winner === user.name) {
 	        ++user.score;
 	        _jquery2['default'].ajax({
-	          url: url + "/save",
+	          url: "/save",
 	          data: user,
 	          dataType: "JSON",
 	          type: "GET",

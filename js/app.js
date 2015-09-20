@@ -17,7 +17,6 @@ let boardStyle = {
   verticalAlign: "top"
 };
 
-let url = "http://findsenpai.co";
 
 let App = React.createClass({
   getInitialState() {
@@ -36,7 +35,7 @@ let App = React.createClass({
     }
     let state = this.state;
     $.ajax({
-      url: url + "/users",
+      url: "/users",
       type: "GET",
       success: function(res) {
         this.setState({users: res});
@@ -53,7 +52,7 @@ let App = React.createClass({
       if (winner === user.name) {
         ++user.score;
         $.ajax({
-          url: url + "/save",
+          url: "/save",
           data: user,
           dataType: "JSON",
           type: "GET",
