@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "74fa9a5658da5363e126"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "dbd18b27535e081a5aa1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -727,7 +727,7 @@
 	    }
 	    var state = this.state;
 	    _jquery2['default'].ajax({
-	      url: url + "/get",
+	      url: url + "/users",
 	      type: "GET",
 	      success: function success(res) {
 	        this.setState({ users: res });
