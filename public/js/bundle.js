@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a72f81e487d2a8f21492"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "38fb442e16e7f1be63f4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -724,15 +724,15 @@
 	      }
 	    }
 	    var self = this;
-	    _jquery2['default'].ajax(({
+	    _jquery2['default'].ajax({
 	      url: "/users",
 	      type: "GET",
 	      success: function success(res) {
-	        if (this.isMounted()) {
-	          this.setState({ users: res });
+	        if (self.isMounted()) {
+	          self.setState({ users: res });
 	        }
 	      }
-	    }).bind(this));
+	    });
 	  },
 	  gameEnd: function gameEnd(winner) {
 	    (0, _jquery2['default'])("#reward").slideToggle();
@@ -747,17 +747,17 @@
 	        (function () {
 	          ++user.score;
 	          var self = _this;
-	          _jquery2['default'].ajax(({
+	          _jquery2['default'].ajax({
 	            url: "/save",
 	            data: user,
 	            dataType: "JSON",
 	            type: "GET",
 	            success: function success(res) {
-	              if (this.isMounted()) {
+	              if (self.isMounted()) {
 	                self.setState({ users: res });
 	              }
 	            }
-	          }).bind(_this));
+	          });
 	        })();
 	      }
 	    });

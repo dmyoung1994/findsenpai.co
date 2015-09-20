@@ -38,11 +38,11 @@ let App = React.createClass({
       url: "/users",
       type: "GET",
       success: function(res) {
-        if (this.isMounted()) {
-          this.setState({users: res});
+        if (self.isMounted()) {
+          self.setState({users: res});
         }
       }
-    }.bind(this));
+    });
   },
   gameEnd(winner) {
     $("#reward").slideToggle();
@@ -60,11 +60,11 @@ let App = React.createClass({
           dataType: "JSON",
           type: "GET",
           success: function(res) {
-            if (this.isMounted()) {
+            if (self.isMounted()) {
               self.setState({users: res});
             }
           }
-        }.bind(this));
+        });
       }
     });
   },
