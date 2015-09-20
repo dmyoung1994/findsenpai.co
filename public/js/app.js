@@ -57,6 +57,7 @@ let App = React.createClass({
         let url = "/save?" + "name=" + user.name +
           "&score=" + user.score +
           "&id=" + user.id;
+          console.log(url);
         $.ajax({
           url: url,
           dataType: "json",
