@@ -20,7 +20,7 @@ let boardStyle = {
 
 let App = React.createClass({
   getInitialState() {
-    return {name: "", users: []};
+    return {name: "", users: [{name: "loading"}]};
   },
   componentDidMount() {
     this.getUsers();

@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "38fb442e16e7f1be63f4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9d7ba76608783c5ccdfe"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -710,7 +710,7 @@
 	  displayName: 'App',
 
 	  getInitialState: function getInitialState() {
-	    return { name: "", users: [] };
+	    return { name: "", users: [{ name: "loading" }] };
 	  },
 	  componentDidMount: function componentDidMount() {
 	    this.getUsers();
@@ -31205,7 +31205,7 @@
 	var previewStyle = {
 	  height: "83px",
 	  width: "50px",
-	  backgroundImage: "url('../../img/students-large.png')",
+	  backgroundImage: "url('/public/img/students-large.png')",
 	  backgroundRepeat: "no-repeat",
 	  display: "inline-block",
 	  verticalAlign: "bottom"
