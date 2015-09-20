@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f36fd9de2d5293bbd5d3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "799ad1c14de08d5ca52c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -728,9 +728,7 @@
 	      url: "/users",
 	      type: "GET",
 	      success: function success(res) {
-	        if (self.isMounted()) {
-	          self.setState({ users: res });
-	        }
+	        self.setState({ users: res });
 	      }
 	    });
 	  },
@@ -753,9 +751,7 @@
 	            dataType: "JSON",
 	            type: "GET",
 	            success: function success(res) {
-	              if (self.isMounted()) {
-	                self.setState({ users: res });
-	              }
+	              self.setState({ users: res });
 	            }
 	          });
 	        })();
@@ -31168,7 +31164,9 @@
 
 	  render: function render() {
 	    var users = this.props.users;
-	    console.log(users);
+	    if (users === undefined) {
+	      users = [{ name: "loading..." }];
+	    }
 	    return _react2["default"].createElement("div", null, users.map(function (user, idx) {
 	      return _react2["default"].createElement(ScoreboardCell, { pos: idx + 1,
 	        name: user.name,

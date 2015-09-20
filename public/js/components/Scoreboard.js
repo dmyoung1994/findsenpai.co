@@ -19,7 +19,9 @@ let ScoreboardCell = React.createClass({
 let Scoreboard = React.createClass({
   render() {
     let users = this.props.users;
-    console.log(users);
+    if (users === undefined) {
+      users = [{name: "loading..."}];
+    }
     return(
       <div>
         {users.map(function(user, idx) {

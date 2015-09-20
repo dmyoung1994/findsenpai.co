@@ -38,9 +38,7 @@ let App = React.createClass({
       url: "/users",
       type: "GET",
       success: function(res) {
-        if (self.isMounted()) {
-          self.setState({users: res});
-        }
+        self.setState({users: res});
       }
     });
   },
@@ -60,9 +58,7 @@ let App = React.createClass({
           dataType: "JSON",
           type: "GET",
           success: function(res) {
-            if (self.isMounted()) {
-              self.setState({users: res});
-            }
+            self.setState({users: res});
           }
         });
       }
