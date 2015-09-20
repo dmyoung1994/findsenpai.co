@@ -32,14 +32,15 @@ let App = React.createClass({
       type: "GET",
       dataType: "json",
       success: function(res) {
+        var name;
         if (self.state.name === "") {
-          var name = prompt("Enter a name:", "Kohai");
+          name = prompt("Enter a name:", "Kohai");
           if (name === null) {
             name = "Loser";
           }
           res.push({"name": name, "score": 0});
         }
-        self.setState({users: res, name: self.state.name});
+        self.setState({users: res, name: name});
       }
     });
   },

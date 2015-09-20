@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f19d736bb085aab41938"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "38699476c936796671b0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -722,14 +722,15 @@
 	      type: "GET",
 	      dataType: "json",
 	      success: function success(res) {
+	        var name;
 	        if (self.state.name === "") {
-	          var name = prompt("Enter a name:", "Kohai");
+	          name = prompt("Enter a name:", "Kohai");
 	          if (name === null) {
 	            name = "Loser";
 	          }
 	          res.push({ "name": name, "score": 0 });
 	        }
-	        self.setState({ users: res, name: self.state.name });
+	        self.setState({ users: res, name: name });
 	      }
 	    });
 	  },
