@@ -27,14 +27,13 @@ let App = React.createClass({
   },
   getUsers() {
     let self = this;
-    var name;
     $.ajax({
       url: "/users",
       type: "GET",
       dataType: "json",
       success: function(res) {
-        if (this.state.name === "") {
-          name = prompt("Enter a name:", "Kohai");
+        if (self.state.name === "") {
+          var name = prompt("Enter a name:", "Kohai");
           if (name === null) {
             name = "Loser";
           }

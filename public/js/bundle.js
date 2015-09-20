@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "67537034da7a9762a077"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7695d236111ca9e7cf72"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -717,14 +717,13 @@
 	  },
 	  getUsers: function getUsers() {
 	    var self = this;
-	    var name;
 	    _jquery2['default'].ajax({
 	      url: "/users",
 	      type: "GET",
 	      dataType: "json",
 	      success: function success(res) {
-	        if (this.state.name === "") {
-	          name = prompt("Enter a name:", "Kohai");
+	        if (self.state.name === "") {
+	          var name = prompt("Enter a name:", "Kohai");
 	          if (name === null) {
 	            name = "Loser";
 	          }
