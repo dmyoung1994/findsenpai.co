@@ -2,7 +2,7 @@ import React  from 'react'
 import { Character } from './Character'
 
 let characterCSS = {
-  backgroundImage: "url('../../img/students.png')",
+  backgroundImage: "url('/public/img/students.png')",
   backgroundRepeat: "no-repeat",
   height: "50px",
   width: "25px",

@@ -19,6 +19,7 @@ let ScoreboardCell = React.createClass({
 let Scoreboard = React.createClass({
   render() {
     let users = this.props.users;
+    console.log(users);
     return(
       <div>
         {users.map(function(user, idx) {

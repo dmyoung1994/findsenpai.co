@@ -79,7 +79,7 @@ let App = React.createClass({
      let senpaiPos = Math.floor(Math.random() * locsSmall.length);
      let senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
      let senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
-
+     console.log("app:" + this.state.users);
     return (
       <div>
         <div style={backgroundStyle}>

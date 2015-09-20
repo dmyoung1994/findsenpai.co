@@ -1,7 +1,7 @@
 import React  from 'react'
 
 let rewardStyle = {
-  backgroundImage: "url('../../img/reward.jpg')",
+  backgroundImage: "url('/public/img/reward.jpg')",
   position: "absolute",
   bottom: 0,
   right: 0,

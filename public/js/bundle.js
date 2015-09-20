@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9d7ba76608783c5ccdfe"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f36fd9de2d5293bbd5d3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -769,7 +769,7 @@
 	    var senpaiPos = Math.floor(Math.random() * locsSmall.length);
 	    var senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
 	    var senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
-
+	    console.log("app:" + this.state.users);
 	    return _react2['default'].createElement('div', null, _react2['default'].createElement('div', { style: backgroundStyle }, _react2['default'].createElement(_componentsGame.Game, { onClick: this.gameEnd, locs: locsSmall, senpaiLoc: senpaiLocSmall,
 	      player: this.state.name })), _react2['default'].createElement('div', { style: boardStyle }, _react2['default'].createElement(_componentsScoreboard.Scoreboard, { users: this.state.users }), _react2['default'].createElement(_componentsSenpaiPreview.SenpaiPreview, { senpaiLoc: senpaiLocLarge }), _react2['default'].createElement(_componentsReward.Reward, null)));
 	  }
@@ -30820,7 +30820,7 @@
 	var _Character = __webpack_require__(173);
 
 	var characterCSS = {
-	  backgroundImage: "url('../../img/students.png')",
+	  backgroundImage: "url('/public/img/students.png')",
 	  backgroundRepeat: "no-repeat",
 	  height: "50px",
 	  width: "25px",
@@ -31107,7 +31107,7 @@
 	var _react2 = _interopRequireDefault(_react);
 
 	var rewardStyle = {
-	  backgroundImage: "url('../../img/reward.jpg')",
+	  backgroundImage: "url('/public/img/reward.jpg')",
 	  position: "absolute",
 	  bottom: 0,
 	  right: 0,
@@ -31168,6 +31168,7 @@
 
 	  render: function render() {
 	    var users = this.props.users;
+	    console.log(users);
 	    return _react2["default"].createElement("div", null, users.map(function (user, idx) {
 	      return _react2["default"].createElement(ScoreboardCell, { pos: idx + 1,
 	        name: user.name,
