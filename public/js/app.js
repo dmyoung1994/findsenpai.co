@@ -54,7 +54,7 @@ let App = React.createClass({
       if (winner === user.name) {
         ++user.score;
         let self = this;
-        if (user.id === udnefined) user.id = '';
+        if (user.id === undefined) user.id = '';
         let url = "/save?" + "name=" + user.name +
           "&score=" + user.score +
           "&id=" + user.id;
@@ -82,7 +82,6 @@ let App = React.createClass({
      let senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
      let senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
      let users = this.state.users;
-     console.log(this.state.name);
     return (
       <div>
         <div style={backgroundStyle}>

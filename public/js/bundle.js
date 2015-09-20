@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "38699476c936796671b0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0469779e04cdf33fef45"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -747,7 +747,7 @@
 	        (function () {
 	          ++user.score;
 	          var self = _this;
-	          if (user.id === udnefined) user.id = '';
+	          if (user.id === undefined) user.id = '';
 	          var url = "/save?" + "name=" + user.name + "&score=" + user.score + "&id=" + user.id;
 	          console.log(url);
 	          _jquery2['default'].ajax({
@@ -770,7 +770,6 @@
 	    var senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
 	    var senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
 	    var users = this.state.users;
-	    console.log(this.state.name);
 	    return _react2['default'].createElement('div', null, _react2['default'].createElement('div', { style: backgroundStyle }, _react2['default'].createElement(_componentsGame.Game, { onClick: this.gameEnd, locs: locsSmall, senpaiLoc: senpaiLocSmall,
 	      player: this.state.name })), _react2['default'].createElement('div', { style: boardStyle }, _react2['default'].createElement(_componentsScoreboard.Scoreboard, { users: users }), _react2['default'].createElement(_componentsSenpaiPreview.SenpaiPreview, { senpaiLoc: senpaiLocLarge }), _react2['default'].createElement(_componentsReward.Reward, null)));
 	  }
@@ -30866,7 +30865,6 @@
 	  displayName: 'Senpai',
 
 	  foundSenpai: function foundSenpai() {
-	    console.log(this.props.player);
 	    this.props.onFind(this.props.player);
 	  },
 	  render: function render() {
