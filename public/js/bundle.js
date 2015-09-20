@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "799ad1c14de08d5ca52c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d9df871ff152b57586c4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -710,20 +710,14 @@
 	  displayName: 'App',
 
 	  getInitialState: function getInitialState() {
-	    return { name: "", users: [{ name: "loading" }] };
+	    return { name: "", users: [{ name: "loading...", score: "..." }] };
 	  },
 	  componentDidMount: function componentDidMount() {
 	    this.getUsers();
 	  },
 	  getUsers: function getUsers() {
-	    var name;
-	    if (this.state.name === "") {
-	      name = prompt("Enter a name:", "Kohai");
-	      if (name === null) {
-	        name = "Loser";
-	      }
-	    }
 	    var self = this;
+	    var name;
 	    _jquery2['default'].ajax({
 	      url: "/users",
 	      type: "GET",
@@ -731,6 +725,12 @@
 	        self.setState({ users: res });
 	      }
 	    });
+	    if (this.state.name === "") {
+	      name = prompt("Enter a name:", "Kohai");
+	      if (name === null) {
+	        name = "Loser";
+	      }
+	    }
 	  },
 	  gameEnd: function gameEnd(winner) {
 	    (0, _jquery2['default'])("#reward").slideToggle();
@@ -765,7 +765,6 @@
 	    var senpaiPos = Math.floor(Math.random() * locsSmall.length);
 	    var senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
 	    var senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
-	    console.log("app:" + this.state.users);
 	    return _react2['default'].createElement('div', null, _react2['default'].createElement('div', { style: backgroundStyle }, _react2['default'].createElement(_componentsGame.Game, { onClick: this.gameEnd, locs: locsSmall, senpaiLoc: senpaiLocSmall,
 	      player: this.state.name })), _react2['default'].createElement('div', { style: boardStyle }, _react2['default'].createElement(_componentsScoreboard.Scoreboard, { users: this.state.users }), _react2['default'].createElement(_componentsSenpaiPreview.SenpaiPreview, { senpaiLoc: senpaiLocLarge }), _react2['default'].createElement(_componentsReward.Reward, null)));
 	  }
@@ -31164,8 +31163,9 @@
 
 	  render: function render() {
 	    var users = this.props.users;
+	    console.log(this.props.users);
 	    if (users === undefined) {
-	      users = [{ name: "loading..." }];
+	      users = [{ name: "loading...", score: "..." }];
 	    }
 	    return _react2["default"].createElement("div", null, users.map(function (user, idx) {
 	      return _react2["default"].createElement(ScoreboardCell, { pos: idx + 1,

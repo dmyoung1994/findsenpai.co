@@ -20,20 +20,14 @@ let boardStyle = {
 
 let App = React.createClass({
   getInitialState() {
-    return {name: "", users: [{name: "loading"}]};
+    return {name: "", users: [{name: "loading...", score: "..."}]};
   },
   componentDidMount() {
     this.getUsers();
   },
   getUsers() {
-    var name;
-    if (this.state.name === "") {
-      name = prompt("Enter a name:", "Kohai");
-      if (name === null) {
-        name = "Loser";
-      }
-    }
     let self = this;
+    var name;
     $.ajax({
       url: "/users",
       type: "GET",
@@ -41,6 +35,12 @@ let App = React.createClass({
         self.setState({users: res});
       }
     });
+    if (this.state.name === "") {
+      name = prompt("Enter a name:", "Kohai");
+      if (name === null) {
+        name = "Loser";
+      }
+    }
   },
   gameEnd(winner) {
     $("#reward").slideToggle();
@@ -75,7 +75,6 @@ let App = React.createClass({
      let senpaiPos = Math.floor(Math.random() * locsSmall.length);
      let senpaiLocSmall = locsSmall.splice(senpaiPos, 1)[0];
      let senpaiLocLarge = locsLarge.splice(senpaiPos, 1)[0];
-     console.log("app:" + this.state.users);
     return (
       <div>
         <div style={backgroundStyle}>
