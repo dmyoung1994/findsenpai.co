@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a051a8642ef960310654"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d39d004777d294f40c2d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -746,9 +746,10 @@
 	        (function () {
 	          ++user.score;
 	          var self = _this;
+	          if (user.id === 'udnefined') user.id = '';
+	          var url = "/save?" + "name=" + user.name + "&score=" + user.score + "&id=" + user.id;
 	          _jquery2['default'].ajax({
-	            url: "/save",
-	            data: user,
+	            url: url,
 	            dataType: "json",
 	            type: "GET",
 	            success: function success(res) {
