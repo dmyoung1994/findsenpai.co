@@ -17,7 +17,7 @@ let boardStyle = {
   verticalAlign: "top"
 };
 
-let url = "http://104.154.86.245";
+let url = "http://findsenpai.co";
 
 let App = React.createClass({
   getInitialState() {

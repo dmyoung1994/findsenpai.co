@@ -706,7 +706,7 @@
 	  verticalAlign: "top"
 	};
 
-	var url = "http://104.154.86.245";
+	var url = "http://findsenpai.co";
 
 	var App = _react2['default'].createClass({
 	  displayName: 'App',
