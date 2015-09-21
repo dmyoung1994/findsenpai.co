@@ -63,7 +63,6 @@ let App = React.createClass({
           dataType: "json",
           type: "GET",
           success: function(res) {
-            console.log(res);
             self.setState({users: res});
           }
         });
