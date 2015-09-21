@@ -42,7 +42,6 @@ app.get('/users', function(req, res) {
 });
 
 app.get('/save', function(req, res) {
-  conn.connect();
   var name = req.query.name;
   var score = req.query.score;
   var id = req.query.id;
