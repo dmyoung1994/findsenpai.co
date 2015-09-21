@@ -55,7 +55,7 @@ let App = React.createClass({
       if (winner === user.name) {
         ++user.score;
         if (user.id === undefined) user.id = '';
-        let url = "save?" + "user=" + user.name +
+        let url = "save?" + "name=" + user.name +
           "&score=" + user.score +
           "&id=" + user.id;
         $.ajax({
