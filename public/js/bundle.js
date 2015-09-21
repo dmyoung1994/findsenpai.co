@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4ca546b07301f91a0558"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "219a883a720087f43e55"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -742,8 +742,6 @@
 	    var state = this.state;
 	    var self = this;
 	    state.users.map(function (user, idx) {
-	      // console.log(user.name);
-	      // console.log(winner);
 	      if (winner === user.name) {
 	        ++user.score;
 	        if (user.id === undefined) user.id = '';
