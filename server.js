@@ -22,6 +22,12 @@ function buildUsers(rows) {
   return users;
 }
 
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res) {
+  res.sendfile(__dirname + '/index.html');
+});
+
 app.get('/users', function(req, res) {
   conn.connect();
   var users = [];
