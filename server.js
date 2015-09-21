@@ -31,7 +31,7 @@ app.get('/', function(req, res) {
 
 app.get('/users', function(req, res) {
   var users = [];
-  conn.query('select * from users', function(err, rows, fields) {
+  conn.query('select * from users order by score desc limit 20', function(err, rows, fields) {
     if (!err) {
       users = buildUsers(rows);
       res.send(JSON.stringify(users));
