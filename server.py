@@ -8,13 +8,11 @@ from flask import Response
 from flask import send_from_directory
 
 app = Flask(__name__)
-@app.route("/public/<path:path>")
-def sendpublic(path):
-	return send_from_directory('public', path)
+
+cnxn = MySQLdb.connect(host='45.79.149.43', port=3306, db='findsenpai', user='root', passwd='ss')
 
 @app.route("/users")
 def get():
-	cnxn = MySQLdb.connect(host='173.194.252.117', port=3306, db='scores', user='senpai', passwd='123ABC')
 	cursor = cnxn.cursor()
 
 	#select all tables from all databases
@@ -32,9 +30,7 @@ def put():
 	user = request.args.get('user')
 	score = request.args.get('score')
 	id = request.args.get('id')
-
-	cnxn = MySQLdb.connect(host='173.194.252.117', port=3306, db='scores', user='senpai', passwd='123ABC')
-
+    
 	cursor = cnxn.cursor()
 
 	query = ""

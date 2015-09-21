@@ -52,8 +52,6 @@ let App = React.createClass({
     let state = this.state;
     var self = this;
     state.users.map(function(user, idx) {
-      // console.log(user.name);
-      // console.log(winner);
       if (winner === user.name) {
         ++user.score;
         if (user.id === undefined) user.id = '';
@@ -65,7 +63,6 @@ let App = React.createClass({
           dataType: "json",
           type: "GET",
           success: function(res) {
-            console.log(res);
             self.setState({users: res});
           }
         });
