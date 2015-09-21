@@ -4,10 +4,10 @@ var app = express();
 
 var conn = mysql.createPool({
   connectionLimit : 10,
-  host: 'localhost',
-  user: 'dmyoung',
-  password: 'Dani3l',
-  database: 'findsenpai'
+  host: '',
+  user: '',
+  password: '',
+  database: ''
 });
 
 function buildUsers(rows) {
