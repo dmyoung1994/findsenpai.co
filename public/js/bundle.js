@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "55f463cb0b83666f2336"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4ca546b07301f91a0558"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -718,7 +718,7 @@
 	  getUsers: function getUsers() {
 	    var self = this;
 	    _jquery2['default'].ajax({
-	      url: "/users",
+	      url: "service/users",
 	      type: "GET",
 	      dataType: "json",
 	      success: function success(res) {
@@ -747,7 +747,7 @@
 	      if (winner === user.name) {
 	        ++user.score;
 	        if (user.id === undefined) user.id = '';
-	        var url = "/save?" + "user=" + user.name + "&score=" + user.score + "&id=" + user.id;
+	        var url = "service/save?" + "user=" + user.name + "&score=" + user.score + "&id=" + user.id;
 	        _jquery2['default'].ajax({
 	          url: url,
 	          dataType: "json",
