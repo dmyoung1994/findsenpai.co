@@ -3,7 +3,7 @@ import React  from 'react'
 let previewStyle = {
   height: "83px",
   width: "50px",
-  backgroundImage: "url('/public/img/students-large.png')",
+  backgroundImage: "url('/img/students-large.png')",
   backgroundRepeat: "no-repeat",
   display: "inline-block",
   verticalAlign: "bottom"
