@@ -2,7 +2,8 @@ var express = require('express');
 var mysql = require('mysql');
 var app = express();
 
-var conn = mysql.createConnection({
+var conn = mysql.createPool({
+  connectionLimit : 10,
   host: 'localhost',
   user: 'dmyoung',
   password: 'Dani3l',
