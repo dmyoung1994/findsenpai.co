@@ -29,7 +29,6 @@ app.get('/', function(req, res) {
 });
 
 app.get('/users', function(req, res) {
-  conn.connect();
   var users = [];
   conn.query('select * from users', function(err, rows, fields) {
     if (!err) {
@@ -39,7 +38,6 @@ app.get('/users', function(req, res) {
       console.log(err);
     }
   });
-  conn.end();
 });
 
 app.get('/save', function(req, res) {
@@ -53,7 +51,6 @@ app.get('/save', function(req, res) {
     query = mysql.format(query, [score, name, id]);
     conn.query(query, function(err, rows, fields) {
       if (err) {
-        throw err;
         console.log(err);
       }
     });
@@ -76,7 +73,6 @@ app.get('/save', function(req, res) {
       console.log(err);
     }
   });
-  conn.end();
 });
 
 var server = app.listen(8080);
