@@ -28,7 +28,7 @@ let App = React.createClass({
   getUsers() {
     let self = this;
     $.ajax({
-      url: "/users",
+      url: "service/users",
       type: "GET",
       dataType: "json",
       success: function(res) {
@@ -57,7 +57,7 @@ let App = React.createClass({
       if (winner === user.name) {
         ++user.score;
         if (user.id === undefined) user.id = '';
-        let url = "/save?" + "user=" + user.name +
+        let url = "service/save?" + "user=" + user.name +
           "&score=" + user.score +
           "&id=" + user.id;
         $.ajax({
